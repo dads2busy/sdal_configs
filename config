@@ -27,6 +27,9 @@ Host sdal_r
 Host sdal_pg
     ProxyCommand ssh sdal -W 192.168.56.3:22
 
+Host sdal_python
+    ProxyCommand ssh sdal -W 192.168.56.5:22
+
 Host sdal_r_snowmane
     ProxyCommand ssh sdal_r -W snowmane.vbi.vt.edu:22
 
