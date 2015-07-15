@@ -22,7 +22,7 @@ Host sdal
     IdentityFile ~/.ssh/id_rsa
 
 Host sdal_r
-    ProxyCommand ssh sdal -W 192.168.56.9:22
+    ProxyCommand ssh sdal -W 192.168.56.10:22
 
 Host sdal_pg
     ProxyCommand ssh sdal -W 192.168.56.3:22
