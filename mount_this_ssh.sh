@@ -4,6 +4,7 @@
 # creates mount folder and mounts the remote filesystem
 rmount() {
   if [[ $(df | grep $1 | wc -l) -eq 0 ]]; then
+	  OS=$(uname -s)
 	  local host folder mname
 	  host="${1%%:*}:"
 	  [[ ${1%:} == ${host%%:*} ]] && folder='' || folder=${1##*:}
@@ -16,7 +17,12 @@ rmount() {
 
 	  if [[ $(grep -i "host ${host%%:*}" ~/.ssh/config) != '' ]]; then
 	    mkdir -p ~/mounts/$mname > /dev/null
-	    sshfs $host$folder ~/mounts/$mname -oauto_cache,reconnect,follow_symlinks -o IdentityFile=~/.ssh/id_rsa && echo "mounted ~/mounts/$mname"
+	    if [[ $OS == 'Linux' ]]; then
+	    	sshfs $host$folder ~/mounts/$mname -oauto_cache,reconnect,follow_symlinks -o IdentityFile=~/.ssh/id_rsa && echo "mounted ~/mounts/$mname"
+	    fi
+	    if [[ $OS == 'Darwin' ]]; then
+	    	sshfs $host$folder ~/mounts/$mname -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=$mname,noappledouble,follow_symlinks -o IdentityFile=~/.ssh/id_rsa && echo "mounted ~/mounts/$mname"
+	    fi
 	  else
 	    echo "No entry found for ${host%%:*}"
 	    return 1
