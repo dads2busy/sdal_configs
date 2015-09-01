@@ -11,7 +11,7 @@ function rs {
         pkill -f r_tunnel; autossh -M 0 -N -f r_tunnel && echo "rstudio tunnel created" && xdg-open http://localhost:8787/;
     fi
     if [[ $OS == 'Darwin' ]]; then
-        pkill -f r_tunnel; autossh -M 0 -N -f r_tunnel && echo "rstudio tunnel created" && open -a "/Applications/Google Chrome.app" 'http://localhost:8787/';
+        pkill -f r_tunnel; autossh -M 0 -N -f r_tunnel && echo "rstudio tunnel created" && open -a "Google Chrome" 'http://localhost:8787/';
     fi
 }
 
@@ -26,3 +26,6 @@ function pg {
 }
 
 PS1='[\u@\h \W]\$ '
+
+source ~/.ssh/mount_this_ssh.sh
+
