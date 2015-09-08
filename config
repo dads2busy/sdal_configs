@@ -15,6 +15,9 @@ Host snowmane
     HostName snowmane.vbi.vt.edu
     IdentityFile ~/.ssh/id_rsa
 
+Host lightfoot
+    HostName lightfoot.vbi.vt.edu
+    IdentityFile ~/.ssh/id_rsa
 
 # sdal data science servers
 Host sdal
