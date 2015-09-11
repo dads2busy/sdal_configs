@@ -33,6 +33,15 @@ Host sdal_pg
 Host sdal_r_snowmane
     ProxyCommand ssh sdal_r -W snowmane.vbi.vt.edu:22
 
+Host sdal_spark
+    ProxyCommand ssh sdal -W 192.168.56.11:22
+
+Host sdal_spark_s1
+    ProxyCommand ssh sdal -W 192.168.56.12:22
+
+Host sdal_spark_s2
+    ProxyCommand ssh sdal -W 192.168.56.13:22
+
 # ssh forwarding
 
 Host r_tunnel
