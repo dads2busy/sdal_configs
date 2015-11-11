@@ -3,14 +3,7 @@ ServerAliveInterval 10
 ServerAliveCountMax 3
 User <pid>
 
-Host github.com
-    IdentityFile ~/.ssh/id_rsa
-
-# vbi servers
-Host gimli
-    HostName gimli.vbi.vt.edu
-    IdentityFile ~/.ssh/id_rsa
-
+# ssh to servers
 Host snowmane
     HostName snowmane.vbi.vt.edu
     IdentityFile ~/.ssh/id_rsa
@@ -19,18 +12,16 @@ Host lightfoot
     HostName lightfoot.vbi.vt.edu
     IdentityFile ~/.ssh/id_rsa
 
-# sdal data science servers
-
-Host sdal_r
-    ProxyCommand ssh snowmane -W 127.0.0.1:22210
+# ssh to lxc containers
+Host sdal_rs
+    ProxyCommand ssh lightfoot -W 127.0.0.1:222212
 
 Host sdal_pg
     ProxyCommand ssh snowmane -W 127.0.0.1:22203
 
-# ssh forwarding
-
-Host r_tunnel
-    Hostname snowmane.vbi.vt.edu
+# ssh tunnels
+Host rs_tunnel
+    Hostname lightfoot.vbi.vt.edu
     LocalForward 8787 localhost:8788
     IdentityFile ~/.ssh/id_rsa
 
