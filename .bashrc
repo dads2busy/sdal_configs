@@ -8,10 +8,10 @@
 function rs {
     OS=$(uname -s)
     if [[ $OS == 'Linux' ]]; then
-        pkill -f r_tunnel; autossh -M 0 -N -f r_tunnel && echo "rstudio tunnel created" && xdg-open http://localhost:8787/;
+        pkill -f rs_tunnel; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && xdg-open http://localhost:8787/;
     fi
     if [[ $OS == 'Darwin' ]]; then
-        pkill -f r_tunnel; autossh -M 0 -N -f r_tunnel && echo "rstudio tunnel created" && open -a "Google Chrome" 'http://localhost:8787/';
+        pkill -f rs_tunnel; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && open -a "Google Chrome" 'http://localhost:8787/';
     fi
 }
 
