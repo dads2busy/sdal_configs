@@ -14,7 +14,7 @@ Host lightfoot
 
 # ssh to lxc containers
 Host sdal_rs
-    ProxyCommand ssh lightfoot -W 127.0.0.1:222212
+    ProxyCommand ssh lightfoot -W 127.0.0.1:22212
 
 Host sdal_pg
     ProxyCommand ssh snowmane -W 127.0.0.1:22203
