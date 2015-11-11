@@ -27,5 +27,6 @@ function pg {
 
 PS1='[\u@\h \W]\$ '
 
+# script for the mounting of servers in ~/.ssh/config
 source ~/.ssh/mount_this_ssh.sh
 
