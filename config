@@ -42,9 +42,19 @@ Host rs_tunnel
     Hostname lightfoot.vbi.vt.edu
     LocalForward 8787 localhost:8787
     IdentityFile ~/.ssh/id_rsa
+    
+Host rs_tunnel_snowmane
+    Hostname snowmane.vbi.vt.edu
+    LocalForward 8787 localhost:8787
+    IdentityFile ~/.ssh/id_rsa
 
 Host pg_tunnel
     Hostname lightfoot.vbi.vt.edu
+    LocalForward 5432 localhost:5433
+    IdentityFile ~/.ssh/id_rsa
+    
+Host pg_tunnel_snowmane
+    Hostname snowmane.vbi.vt.edu
     LocalForward 5432 localhost:5433
     IdentityFile ~/.ssh/id_rsa
 
