@@ -35,6 +35,26 @@ function jp {
     fi
 }
 
+function rs_snowmane {
+    OS=$(uname -s)
+    if [[ $OS == 'Linux' ]]; then
+        pkill -f rs_tunnel_snowmane; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && xdg-open http://localhost:8787/;
+    fi
+    if [[ $OS == 'Darwin' ]]; then
+        pkill -f rs_tunnel_snowmane; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && open -a "/Applications/Google Chrome.app" 'http://localhost:8787/';
+    fi
+}
+
+function pg_snowmane {
+    OS=$(uname -s)
+    if [[ $OS == 'Linux' ]]; then
+        pkill -f pg_tunnel_snowmane; autossh -M 0 -N -f pg_tunnel && echo "postgresql tunnel created" && `nohup sh -c 'pgadmin3' > /dev/null &`;
+    fi
+    if [[ $OS == 'Darwin' ]]; then
+        pkill -f pg_tunnel_snowmane; autossh -M 0 -N -f pg_tunnel && echo "postgresql tunnel created" && `open -a pgadmin3`;
+    fi
+}
+
 PS1='[\u@\h \W]\$ '
 
 # script for the mounting of servers in ~/.ssh/config
