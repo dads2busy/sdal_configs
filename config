@@ -23,9 +23,15 @@ Host lightfoot
 
 Host sdal_r
     ProxyCommand ssh lightfoot -W 127.0.0.1:22210
+    
+Host sdal_r_snowmane
+    ProxyCommand ssh snowmane -W 127.0.0.1:22210
 
 Host sdal_pg
     ProxyCommand ssh lightfoot -W 127.0.0.1:22203
+    
+Host sdal_pg_snowmane
+    ProxyCommand ssh snowmane -W 127.0.0.1:22203
 
 Host sdal_py
     ProxyCommand ssh lightfoot -W 127.0.0.1:22208
