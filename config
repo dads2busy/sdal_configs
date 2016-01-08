@@ -6,7 +6,7 @@ User <your_pid>
 Host github.com
     IdentityFile ~/.ssh/id_rsa
 
-# vbi servers
+## vbi servers
 Host gimli
     HostName gimli.vbi.vt.edu
     IdentityFile ~/.ssh/id_rsa
@@ -22,35 +22,40 @@ Host lightfoot
 # sdal data science servers
 
 Host sdal_r
-    ProxyCommand ssh lightfoot -W 127.0.0.1:22210
+    Hostname 192.168.122.10
+    ProxyCommand ssh lightfoot -W %h:%p
     
 Host sdal_r_snowmane
     ProxyCommand ssh snowmane -W 127.0.0.1:22210
 
 Host sdal_pg
-    ProxyCommand ssh lightfoot -W 127.0.0.1:22203
+    Hostname 192.168.122.3
+    ProxyCommand ssh lightfoot -W %h:%p
     
 Host sdal_pg_snowmane
     ProxyCommand ssh snowmane -W 127.0.0.1:22203
 
 Host sdal_py
-    ProxyCommand ssh lightfoot -W 127.0.0.1:22208
+    Hostname 192.168.122.8
+    ProxyCommand ssh lightfoot -W %h:%p
 
 # ssh forwarding
 
 Host rs_tunnel
-    Hostname lightfoot.vbi.vt.edu
+    Hostname 192.168.122.10
     LocalForward 8787 localhost:8787
+    ProxyCommand ssh lightfoot -W %h:%p
     IdentityFile ~/.ssh/id_rsa
     
 Host rs_tunnel_snowmane
     Hostname snowmane.vbi.vt.edu
-    LocalForward 8787 localhost:8788
+    LocalForward 8787 localhost:18787
     IdentityFile ~/.ssh/id_rsa
 
 Host pg_tunnel
-    Hostname lightfoot.vbi.vt.edu
-    LocalForward 5432 localhost:5432
+    Hostname 192.168.122.3
+    LocalForward 8080 localhost:80
+    ProxyCommand ssh lightfoot -W %h:%p
     IdentityFile ~/.ssh/id_rsa
     
 Host pg_tunnel_snowmane
@@ -59,6 +64,8 @@ Host pg_tunnel_snowmane
     IdentityFile ~/.ssh/id_rsa
 
 Host jp_tunnel
-    Hostname lightfoot.vbi.vt.edu
+    Hostname 192.168.122.8
     LocalForward 8000 localhost:8000
+    ProxyCommand ssh lightfoot -W %h:%p
     IdentityFile ~/.ssh/id_rsa
+
