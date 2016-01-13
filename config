@@ -1,6 +1,7 @@
 Host *
 ServerAliveInterval 10
 ServerAliveCountMax 3
+StrictHostKeyChecking no
 User <your_pid>
 
 Host github.com
