@@ -11,7 +11,7 @@ function rs {
         pkill -f rs_tunnel; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && xdg-open http://localhost:8787/;
     fi
     if [[ $OS == 'Darwin' ]]; then
-        pkill -f rs_tunnel; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && open -a "/Applications/Google Chrome.app" 'http://localhost:8787/';
+        pkill -f rs_tunnel; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && open -a "Google Chrome.app" 'http://localhost:8787/';
     fi
 }
 
@@ -21,7 +21,7 @@ function pg {
         pkill -f pg_tunnel; autossh -M 0 -N -f pg_tunnel && echo "postgresql tunnel created" && xdg-open http://localhost:8080/;
     fi
     if [[ $OS == 'Darwin' ]]; then
-        pkill -f pg_tunnel; autossh -M 0 -N -f pg_tunnel && echo "postgresql tunnel created" && open -a "/Applications/Google Chrome.app" 'http://localhost:8080/';
+        pkill -f pg_tunnel; autossh -M 0 -N -f pg_tunnel && echo "postgresql tunnel created" && open -a "Google Chrome.app" 'http://localhost:8080/';
     fi
 }
 
@@ -31,8 +31,7 @@ function jp {
         pkill -f jp_tunnel; autossh -M 0 -N -f jp_tunnel && echo "jupyter tunnel created" && xdg-open http://localhost:8000/;
     fi
     if [[ $OS == 'Darwin' ]]; then
-        pkill -f jp_tunnel; autossh -M 0 -N -f jp_tunnel && echo "jupyter tunnel created" && open -a "/Applications/Google 
-Chrome.app" 'http://localhost:8000/';
+        pkill -f jp_tunnel; autossh -M 0 -N -f jp_tunnel && echo "jupyter tunnel created" && open -a "Google Chrome.app" 'http://localhost:8000/';
     fi
 }
 
@@ -42,7 +41,7 @@ function rs_snowmane {
         pkill -f rs_tunnel_snowmane; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && xdg-open http://localhost:8787/;
     fi
     if [[ $OS == 'Darwin' ]]; then
-        pkill -f rs_tunnel_snowmane; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && open -a "/Applications/Google Chrome.app" 'http://localhost:8787/';
+        pkill -f rs_tunnel_snowmane; autossh -M 0 -N -f rs_tunnel && echo "rstudio tunnel created" && open -a "Google Chrome.app" 'http://localhost:8787/';
     fi
 }
 
