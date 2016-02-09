@@ -3,11 +3,13 @@
 if [ ! -f ~/.bash_profile ]; then
     echo "~/.bash_profile not found"
     cp ~/git/sdal_configs/.bash_profile ~/
+    echo "~/.bash_profile created"
 fi
 
 if [ ! -f ~/.bashrc ]; then
     echo "~/.bashrc not found"
     cp ~/git/sdal_configs/.bashrc ~/
+    echo "~/.bashrc created"
 fi
 
 
