@@ -40,6 +40,10 @@ Host sdal_py
     Hostname 192.168.122.8
     ProxyCommand ssh lightfoot -W %h:%p
 
+Host sdal_anal
+    Hostname 192.168.122.7
+    ProxyCommand ssh lightfoot -W %h:%p
+
 # ssh forwarding
 
 Host rs_tunnel
