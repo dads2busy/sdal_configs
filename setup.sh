@@ -1,5 +1,12 @@
 #! /usr/bin/env bash
 
+if (( $# != 1 ))
+then
+  echo "Usage: ./setup.sh username"
+  echo "no username provided"
+  exit 1
+fi
+
 # get directory of this script
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
