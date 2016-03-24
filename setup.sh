@@ -44,3 +44,6 @@ cat $DIR/config >> ~/.ssh/config
 
 # reset the file
 sed -i -e "s/$1/<your_pid>/g" $DIR/config
+
+# SSHFS MOUNTS
+cp $DIR/mount_this_ssh.sh ~/.ssh/
