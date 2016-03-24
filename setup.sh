@@ -16,3 +16,5 @@ fi
 echo "\"Added by sdal_configs setup\"" >> ~/.bashrc
 
 echo "source ~/sdal_configs/.bash_aliases_sdal" >> ~/.bashrc
+
+source ~/sdal_configs/make_ssh_config.sh
