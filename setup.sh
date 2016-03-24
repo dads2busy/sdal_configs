@@ -23,7 +23,7 @@ if [ ! -f ~/.bashrc ]; then
     echo "~/.bashrc created"
 fi
 
-echo "\"Added by sdal_configs setup\"" >> ~/.bashrc
+echo "# Added by sdal_configs setup" >> ~/.bashrc
 
 echo "source $DIR/.bash_aliases_sdal" >> ~/.bashrc
 
