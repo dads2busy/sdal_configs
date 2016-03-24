@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 
+# check if username has been provided
 if (( $# != 1 ))
 then
   echo "Usage: ./setup.sh username"
@@ -28,6 +29,8 @@ echo "# Added by sdal_configs setup" >> ~/.bashrc
 echo "source $DIR/.bash_aliases_sdal" >> ~/.bashrc
 
 # SSH CONFIG FILE
+mkdir -p ~/.ssh
+
 if [ ! -f ~/.ssh/config_home ]; then
     echo "~/.ssh/config_home not found"
     touch ~/.ssh/config_home
