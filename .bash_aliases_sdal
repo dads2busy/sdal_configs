@@ -1,3 +1,6 @@
+# command for vpn
+alias sdal_vpn='sudo openconnect --juniper ras.cns.vt.edu/vt'
+
 # script for the mounting of servers in ~/.ssh/config
 source ~/.ssh/mount_this_ssh.sh
 
